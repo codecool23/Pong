@@ -12,85 +12,31 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        const int movementspeed = 3, topWorld = 0, bottomWorld = 498; 
-        bool isUpPressedForPlayer1, isDownPressedForPlayer1, isUpPressedForPlayer2, isDownPressedForPlayer2;
-        bool? wasGoingUpLastTickForPlayer1, wasGoingUpLastTickForPlayer2;
-        int numberOfTickGoingInTheSameDirectionForPlayer1, numberOfTickGoingInTheSameDirectionForPlayer2;
+        
+        Player player1, player2;
+        Ball ball;
+
+
+       
         public Form1()
         {
             InitializeComponent();
+
+            player1 = new Player(Paddle1, labelPlayer1);
+            player2 = new Player(Paddle2, labelPlayer2);
+            ball = new Ball(Ball, player1, player2);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             
 
-            ProcessMove(Paddle1, isUpPressedForPlayer1, isDownPressedForPlayer1 , ref wasGoingUpLastTickForPlayer1 , ref numberOfTickGoingInTheSameDirectionForPlayer1);
-            ProcessMove(Paddle2, isUpPressedForPlayer2, isDownPressedForPlayer2, ref wasGoingUpLastTickForPlayer2 , ref numberOfTickGoingInTheSameDirectionForPlayer2);
+            player1.ProcessMove();
+            player2.ProcessMove();
+            ball.ProcessMove();
         }
 
-        private void ProcessMove(PictureBox paddle, bool isUpPressed, bool isDownPressed, ref bool? wasGoingUp, ref int numberOfTickGoingInTheSameDirection)
-        {
-            bool? goingUp = null;
-
-
-            if (isUpPressed)
-            {
-                goingUp = true;
-            }
-            if (isDownPressed)
-            {
-                if (goingUp.HasValue)
-                {
-                    goingUp = null;
-                }
-                else
-                {
-                    goingUp = false;
-                }
-            }
-
-            if(wasGoingUp.HasValue)
-            {
-                if(!goingUp.HasValue)
-                {
-                    wasGoingUp = null;
-                    numberOfTickGoingInTheSameDirection = 0;
-                } else if(wasGoingUp.Value == goingUp.Value)
-                {
-                    numberOfTickGoingInTheSameDirection++;
-                } else
-                {
-                    wasGoingUp = goingUp;
-                    numberOfTickGoingInTheSameDirection = 1;
-                }
-            } else if(goingUp.HasValue)
-            {
-                wasGoingUp = goingUp;
-                numberOfTickGoingInTheSameDirection = 1;
-            }
-
-
-
-            DoMove(paddle, goingUp , numberOfTickGoingInTheSameDirection);
-        }
-
-        private void DoMove(PictureBox paddle, bool? goingUp, int numberOfTickGoingInTheSameDirection)
-        {
-            if(goingUp.HasValue) {
-                var speed = movementspeed * (numberOfTickGoingInTheSameDirection / 10);
-                if(goingUp.Value)
-                {
-                    speed *= -1;
-                }
-                paddle.Location = new Point(paddle.Location.X,
-                   Math.Max(topWorld,
-                  Math.Min(bottomWorld, paddle.Location.Y + speed
-                   )
-                   ));
-            }
-            
-        }
+        
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -116,24 +62,27 @@ namespace WindowsFormsApp1
             {
                
                 case Keys.Up:
-                    isUpPressedForPlayer1 = isDown;
+                    player1.isUpPressed = isDown;
                     break;
                 case Keys.Down:
-                    isDownPressedForPlayer1 = isDown;
+                    player1.isDownPressed = isDown;
                     break;
 
                 case Keys.Oemcomma:
                 case Keys.W:
-                    isUpPressedForPlayer2 = isDown;
+                    player2.isUpPressed = isDown;
                     break;
                 case Keys.O:
                 case Keys.S:
-                    isDownPressedForPlayer2 = isDown;
+                    player2.isDownPressed = isDown;
                     break;
 
 
             }
         }
+
+        
+
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             CheckKeys(e, false);
