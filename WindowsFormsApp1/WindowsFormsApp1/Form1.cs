@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
     {
         
         Player player1, player2;
-        Ball ball;
+        public List<Ball> balllist;
 
 
        
@@ -24,7 +24,8 @@ namespace WindowsFormsApp1
 
             player1 = new Player(Paddle1, labelPlayer1);
             player2 = new Player(Paddle2, labelPlayer2);
-            ball = new Ball(Ball, player1, player2);
+            balllist = new List<Ball>();
+            balllist.Add(new Ball(this, Ball, player1, player2));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -33,7 +34,11 @@ namespace WindowsFormsApp1
 
             player1.ProcessMove();
             player2.ProcessMove();
-            ball.ProcessMove();
+            foreach(Ball ball in balllist)
+            {
+                ball.ProcessMove();
+            }
+            
         }
 
         

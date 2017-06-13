@@ -10,13 +10,18 @@ namespace WindowsFormsApp1
 {
     public class Ball
     {
-        private PictureBox ball;
+        Form1 form;
+        private PictureBox ball, aballModel;
         Random rand = new Random();
         int xSpeed, ySpeed;
         Player leftPlayer, rightPlayer;
-        public Ball(PictureBox ball, Player leftPlayer, Player rightPlayer)
+        public Ball(Form1 form, PictureBox ballModel, Player leftPlayer, Player rightPlayer)
         {
-            this.ball = ball;
+            this.form = form;
+            aballModel = ballModel;
+            this.ball = new PictureBox();
+            form.Controls.Add(ball);
+            this.ball.Image = ballModel.Image;
             this.leftPlayer = leftPlayer;
             this.rightPlayer = rightPlayer;
             xSpeed = 1;
@@ -45,6 +50,8 @@ namespace WindowsFormsApp1
                 || rightPlayer.paddle.Bounds.IntersectsWith(ball.Bounds)) {
                 xSpeed *= -1;
                 ySpeed *= 1;
+                new Ball(form, aballModel, leftPlayer, rightPlayer);
+                
             }
             
         }
@@ -53,7 +60,17 @@ namespace WindowsFormsApp1
         private void Score(Player winningPlayer)
         {
             winningPlayer.score++;
-            ResetBall();
+            foreach(var ball in form.balllist)
+            {
+                form.Controls.Remove(ball.ball);
+            }
+            form.balllist.Clear();
+            new Ball(form, aballModel, leftPlayer, rightPlayer);
+            
+                //ResetBall();
+            
+
+            
         }
 
         private void ResetBall()

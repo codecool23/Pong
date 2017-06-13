@@ -69,6 +69,7 @@
             this.Ball.Size = new System.Drawing.Size(20, 19);
             this.Ball.TabIndex = 2;
             this.Ball.TabStop = false;
+            this.Ball.Visible = false;
             // 
             // timer1
             // 
