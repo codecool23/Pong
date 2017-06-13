@@ -25,6 +25,11 @@ namespace WindowsFormsApp1
             player1 = new Player(Paddle1, labelPlayer1);
             player2 = new Player(Paddle2, labelPlayer2);
             balllist = new List<Ball>();
+            StartNewGame();
+        }
+
+        private void StartNewGame()
+        {
             balllist.Add(new Ball(this, Ball, player1, player2));
         }
 
@@ -34,9 +39,19 @@ namespace WindowsFormsApp1
 
             player1.ProcessMove();
             player2.ProcessMove();
-            foreach(Ball ball in balllist)
+
+            for(int i = balllist.Count  - 1 ; i >= 0; i--)
             {
-                ball.ProcessMove();
+                if(balllist[i].ProcessMove()) {
+                    
+                    balllist.RemoveAt(i);
+                }
+            }
+
+
+           if(balllist.Count == 0)
+            {
+                StartNewGame();
             }
             
         }

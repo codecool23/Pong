@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
             this.form = form;
             aballModel = ballModel;
             this.ball = new PictureBox();
+            this.ball.Size = aballModel.Size;
             form.Controls.Add(ball);
             this.ball.Image = ballModel.Image;
             this.leftPlayer = leftPlayer;
@@ -29,7 +30,7 @@ namespace WindowsFormsApp1
             ResetBall();
         }
 
-        internal void ProcessMove()
+        internal bool ProcessMove()
         {
             var bottom = PongWorldInfo.bottomWorld - ball.Height;
             ball.Location = new Point(ball.Location.X + xSpeed,
@@ -42,17 +43,21 @@ namespace WindowsFormsApp1
             if (ball.Location.X <= PongWorldInfo.leftOfWorld)
             {
                 Score(leftPlayer);
+                return true;
             } else if(ball.Location.X >= PongWorldInfo.rightOfWorld - ball.Width)
             {
                 Score(rightPlayer);
+                return true;
             }
+
             if(leftPlayer.paddle.Bounds.IntersectsWith(ball.Bounds)
                 || rightPlayer.paddle.Bounds.IntersectsWith(ball.Bounds)) {
-                xSpeed *= -1;
-                ySpeed *= 1;
-                new Ball(form, aballModel, leftPlayer, rightPlayer);
+                xSpeed *= -2;
+                //ySpeed *= 1;
+               form.balllist.Add( new Ball(form, aballModel, leftPlayer, rightPlayer));
                 
             }
+            return false;
             
         }
 
@@ -60,17 +65,15 @@ namespace WindowsFormsApp1
         private void Score(Player winningPlayer)
         {
             winningPlayer.score++;
-            foreach(var ball in form.balllist)
-            {
-                form.Controls.Remove(ball.ball);
-            }
-            form.balllist.Clear();
-            new Ball(form, aballModel, leftPlayer, rightPlayer);
-            
-                //ResetBall();
-            
+            form.Controls.Remove(ball);
 
-            
+
+
+
+
+
+
+
         }
 
         private void ResetBall()
