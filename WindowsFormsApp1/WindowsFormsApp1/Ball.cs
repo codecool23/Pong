@@ -43,8 +43,8 @@ namespace WindowsFormsApp1
             }
             if(leftPlayer.paddle.Bounds.IntersectsWith(ball.Bounds)
                 || rightPlayer.paddle.Bounds.IntersectsWith(ball.Bounds)) {
-                xSpeed *= -2;
-                ySpeed *= 2;
+                xSpeed *= -1;
+                ySpeed *= 1;
             }
             
         }
