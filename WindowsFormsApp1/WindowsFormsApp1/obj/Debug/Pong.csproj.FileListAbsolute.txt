@@ -7,3 +7,12 @@ D:\gitkraken\SortString\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsForms
 D:\gitkraken\SortString\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 D:\gitkraken\SortString\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
 D:\gitkraken\SortString\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Pong.csprojResolveAssemblyReference.cache
+E:\Pong\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+E:\Pong\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+E:\Pong\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+E:\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Pong.csprojResolveAssemblyReference.cache
+E:\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+E:\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Pong.csproj.GenerateResource.Cache
+E:\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+E:\Pong\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

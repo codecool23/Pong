@@ -85,7 +85,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(592, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 52);
+            this.label1.Size = new System.Drawing.Size(125, 52);
             this.label1.TabIndex = 3;
             this.label1.Text = "Score";
             // 
@@ -102,7 +102,6 @@
             this.labelPlayer2.TabIndex = 4;
             this.labelPlayer2.Text = "0";
             this.labelPlayer2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            //this.labelPlayer2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -150,6 +149,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pong";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Paddle2)).EndInit();
