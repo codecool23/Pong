@@ -64,9 +64,9 @@
             // Ball
             // 
             this.Ball.Image = ((System.Drawing.Image)(resources.GetObject("Ball.Image")));
-            this.Ball.Location = new System.Drawing.Point(601, 270);
+            this.Ball.Location = new System.Drawing.Point(404, 185);
             this.Ball.Name = "Ball";
-            this.Ball.Size = new System.Drawing.Size(21, 21);
+            this.Ball.Size = new System.Drawing.Size(20, 19);
             this.Ball.TabIndex = 2;
             this.Ball.TabStop = false;
             // 
@@ -81,11 +81,11 @@
             this.label1.AutoEllipsis = true;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(592, 9);
+            this.label1.Location = new System.Drawing.Point(596, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 52);
+            this.label1.Size = new System.Drawing.Size(108, 43);
             this.label1.TabIndex = 3;
             this.label1.Text = "Score";
             // 
@@ -94,11 +94,11 @@
             this.labelPlayer2.AutoEllipsis = true;
             this.labelPlayer2.AutoSize = true;
             this.labelPlayer2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelPlayer2.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayer2.Font = new System.Drawing.Font("Franklin Gothic Medium", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelPlayer2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelPlayer2.Location = new System.Drawing.Point(567, 61);
             this.labelPlayer2.Name = "labelPlayer2";
-            this.labelPlayer2.Size = new System.Drawing.Size(46, 52);
+            this.labelPlayer2.Size = new System.Drawing.Size(41, 43);
             this.labelPlayer2.TabIndex = 4;
             this.labelPlayer2.Text = "0";
             this.labelPlayer2.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -108,25 +108,26 @@
             this.label3.AutoEllipsis = true;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(633, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 52);
+            this.label3.Size = new System.Drawing.Size(35, 43);
             this.label3.TabIndex = 5;
             this.label3.Text = "\\";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // labelPlayer1
             // 
             this.labelPlayer1.AutoEllipsis = true;
             this.labelPlayer1.AutoSize = true;
             this.labelPlayer1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelPlayer1.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayer1.Font = new System.Drawing.Font("Franklin Gothic Medium", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelPlayer1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelPlayer1.Location = new System.Drawing.Point(694, 61);
             this.labelPlayer1.Name = "labelPlayer1";
-            this.labelPlayer1.Size = new System.Drawing.Size(46, 52);
+            this.labelPlayer1.Size = new System.Drawing.Size(41, 43);
             this.labelPlayer1.TabIndex = 6;
             this.labelPlayer1.Text = "0";
             // 

@@ -14,11 +14,24 @@ namespace WindowsFormsApp1
 
         public bool isUpPressed, isDownPressed;
 
-        PictureBox paddle;
+        public PictureBox paddle;
         Label scoreLabel;
         bool? wasGoingUp;
         int numberOfTickGoingInTheSameDirection;
-        public int score;
+
+        int _score;
+        public int score
+        {
+            get
+            {
+                return _score;
+            }
+            set
+            {
+                _score = value;
+                scoreLabel.Text = score.ToString();
+            }
+        }
 
         public Player(PictureBox paddle1, Label scoreLabel)
         {
